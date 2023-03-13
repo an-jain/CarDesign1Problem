@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="car.js"></script>
+  <script src="base.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:gray">
+
+    <a-camera wasd-controls-enabled="true" position="0 8 20"></a-camera>
+
+    
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+      <a-asset-item id="car-obj" src="./models/obj/tinker.obj"></a-asset-item>
+      <a-asset-item id="car-mtl" src="./models/obj/obj.mtl"></a-asset-item>
+      <a-asset-item id="car-gltf" src="./models/gltf/Car Design.glb"></a-asset-item>
+    </a-assets>
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+    <a-entity obj-model="obj: #car-obj; mtl: #car-mtl"  position="5 0 0" rotation="-90 -40 0" scale="0.1 0.1 0.1 "
+    ></a-entity>
+
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    
+    <a-circle id="floor" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="white">
+    </a-circle>
+
+     <!-------------------------------------Room Walls----------------------------------------------->
+
+     </a-scene>
+</body>
+
+</html>
